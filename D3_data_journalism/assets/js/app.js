@@ -61,14 +61,13 @@ d3.csv("assets/data/data.csv").then(function(censusData) {
     .data(censusData)
     .enter()
     .append("circle")
+    .attr("class", "stateCircle")
     .attr("cx", d => xLinearScale(d.poverty))
     .attr("cy", d => yLinearScale(d.healthcare))
     .attr("r", "15")
-    .attr("fill", "teal")
-    .attr("opacity", ".5")
 
 
-    var abbrGroup = chartGroup.selectAll("text")
+    var abbrGroup = chartGroup.selectAll("chartGroup text")
     .data(censusData)
     .enter()
     .append("text")
